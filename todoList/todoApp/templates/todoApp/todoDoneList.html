@@ -17,7 +17,7 @@
 <ul class="list-group">
     {% for done in dones %}
     <li class="list-group-item">
-        <a href="">{{ done.title }}</a>
+        <a href="/{{done.pk}}/">{{ done.title }}</a>
         {% if done.important %}
         <span class="badge badge-danger">!</span>
         {% endif %}

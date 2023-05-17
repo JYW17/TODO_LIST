@@ -47,3 +47,13 @@ def todoDone(request, pk):
 def todoDoneList(request):
     dones = Todo.objects.filter(completed=True)
     return render(request, 'todoApp/todoDoneList.html', {'dones': dones})
+
+def todoDeleteFromList(request, pk):
+    todo = Todo.objects.get(id=pk)
+    todo.delete()
+    return redirect('todoList')
+
+def todoDeleteFromDone(request, pk):
+    todo = Todo.objects.get(id=pk)
+    todo.delete()
+    return redirect('todoDoneList')

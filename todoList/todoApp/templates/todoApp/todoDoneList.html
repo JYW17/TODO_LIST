@@ -14,29 +14,33 @@
 <body>
 <div class="container">
 <h1>TODO DONE LIST</h1>
+<p>
+    <a href= "/" class="btn btn-primary" style="float:right">TODO LIST</a>
+</p>
+
 <ul class="list-group">
-    {% for done in dones %}
-    <li class="list-group-item">
-        <a href="/{{done.pk}}/">{{ done.title }}</a>
-        {% if done.important %}
-        <span class="badge badge-danger">!</span>
-        {% endif %}
-        <div style="float:right">
-        <a href="/" class="btn btn-outline-primary">목록으로</a>
-        </div>
-    </li>
-    {% endfor %}
+{% for done in dones %}
+<li class="list-group-item">
+    <a href="/{{done.pk}}/">{{ done.title }}</a>
+    {% if done.important %}
+    <span class="badge badge-danger">!</span>
+    {% endif %}
+    <div style="float:right">
+    <a href="/{{done.pk}}/DoneDelete/" class="btn btn-outline-primary">삭제</a>
+    </div>
+</li>
+{% endfor %}
 </ul>
 </div>
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-        crossorigin="anonymous"></script>
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
 
 </body>
 </html>
